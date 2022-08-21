@@ -18,3 +18,9 @@ services:
 volumes:
   mysqldata:
     driver: local
+
+
+#networks:
+#  local_mysql:
+#    external:
+#      name: mysql_default
