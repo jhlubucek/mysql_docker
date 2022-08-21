@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  mysql:
+    restart: always
+    image: mysql/mysql-server:8.0.29
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+#      - ./datadump.sql:/docker-entrypoint-initdb.d/datadump.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=S3cretJakoFakt
+      - MYSQL_PASSWORD=kokos123
+      - MYSQL_USER=jhlubucek
+      - MYSQL_DATABASE=jhlubucek_monet_rp
+
+volumes:
+  mysqldata:
+    driver: local
